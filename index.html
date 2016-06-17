@@ -10,8 +10,8 @@
     <!-- Meta tags -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Engineer Of Chemical And Computer Engineering. Personal Website">
-    <meta name="keywords" content="Chao Bin, web development, programming">
+    <meta name="description" content="A Graduate Student of BUCT Major in Biochemical Engineering | Personal Website">
+    <meta name="keywords" content="Chao Bin, web development, programming, Graduate Student">
     <meta name="author" content="Chao Bin"/>
     <meta name="robots" content="index, follow">
 
@@ -66,7 +66,7 @@
 	                		CHAO BIN
 	                	</div>
 	                	<div id="logo_subheader">
-	                		Engineer of Computer and Biochemical Engineering
+	                		A Graduate Student of BUCT
 	                	</div>
                 	</div>
                 	
@@ -98,11 +98,7 @@
 
     <section id="intro" class="intro-section">
         <!-- Video Background -->
-        <video id="video_background" preload="auto" autoplay="autoplay" muted="muted" loop="loop"> 
-                <source src="Video/video.mp4" type="video/mp4" />
-                <source src="Video/video.ogv" type="video/ogg" />
-                <source src="Video/video.webm" type="video/webm" />
-        </video> 
+        
         <!-- / End Video Start Container -->       
         <div class="wow bounceIn" data-wow-delay="0.3s">
         <div class="container">
@@ -110,7 +106,7 @@
                 <div class="col-lg-12">
                     
                     <h1>HI! WELCOME TO MY HOMEPAGE!</h1>
-                    <p class="slogan"><mark class="gray">I'm Chao Bin -- Engineer of Computer and Biochemical Engineering from Beijing/China.</mark></p>
+                    <p class="slogan"><mark class="gray">I'm Chao Bin -- A Graduate Student of BUCT Major in Biochemical Engineering from Beijing.</mark></p>
                     <p class="slogan-2">WEB DEVELOPMENT · PROGRAMMING · BIOCHEMICAL ENGINEERING</p>
                     
                 </div>
@@ -138,12 +134,12 @@
                     <p class="text-indent">Applied engineer of chemical engineering and computer science for information technology is enabled to use and apply the existing technologies for networking, programming, development of applications, data bases, Web technologies, digital media and electronic publishing. Study Program for Information Technology has a goal to: Train professionals in the field of computer and information technologies for producing successful and productive specialists in industry, public enterprises, governmental agencies, health and educational institutions, enabled to satisfy the needs of the society; Provide the knowledge and the skills needed in the fields and systems based on computer and information technologies and the skills needed for the continuation of research or study in this field.</p>
                     <small><strong>Graduate degree, Biochemical engineering, Beijing University of Chemical Technology, 2015 - now</strong></small>
                     
-                    <h2><i class="fa fa-cogs"></i> Work Experience</h2>
+                    <!--<h2><i class="fa fa-cogs"></i> Work Experience</h2>
                     <p><small><strong>My current and ex work experience</strong></small></p>
                     <ul>
                         <li><i class="fa fa-check-square"></i> Web Developer &#64; Null Object</li>
                         <li><i class="fa fa-check-square"></i> Web Developer &#64; Ctbri</li>
-                    </ul>
+                    </ul>-->
                     <div class="clearfix"></div>
                     <!--<h2><i class="fa fa-download"></i> Download</h2>
                     <a href="http://markosavic.elektronskoposlovanje.rs/cvpdf.pdf" class="btn btn-default">Curricula Vitae .PDF</a>
@@ -390,10 +386,20 @@
     <script>
         new WOW().init();
         $(document).ready(function () {
-			document.getElementsByTagName('video')[0].onended = function () {
-			  this.load();
-			  this.play();
-			};
+        	//针对屏幕宽，小屏幕显示图片，大屏幕显示视频
+        	var width = $(document).width();
+        	if(width >= 768){
+        		var video = '<video id="video_background" preload="auto" autoplay="autoplay" muted="muted" loop="loop">'+ 
+                '<source src="Video/video.mp4" type="video/mp4" />'+
+                '<source src="Video/video.ogv" type="video/ogg" />'+
+                '<source src="Video/video.webm" type="video/webm" />'+
+				'</video>';
+				$("#intro").prepend(video);
+        	}else{
+        		var bgimg = '<img id="video_background" src="img/bg.jpg" >';
+        		$("#intro").prepend(bgimg);
+        	}
+        	
         });
     </script>
 
